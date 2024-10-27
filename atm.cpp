@@ -12,20 +12,13 @@ private:
 
 public:
   // Constructors
-  BankAccount(string name_in, int pin_in);
-  BankAccount(string name_in, int pin_in, string phone_in);
+  BankAccount(string name_in = "none", int pin_in = 1111, double balance_in = 0.0, string phone_in = "");
   // Destructor
   ~BankAccount() { cout << "destructor called for " << name << endl; }
 };
 
-BankAccount::BankAccount()
-    : BankAccount {"None", 0, 0} {}
-
-BankAccount::BankAccount(string name_in, int pin_in)
-    : BankAccount {name_in, pin_in, 0} {}
-
-BankAccount::BankAccount(string name_in, int pin_in, string phone_in)
-    : name{name_in}, pin{pin_in}, phone_num{phone_in} {}
+BankAccount::BankAccount(string name_in, int pin_in, double balance_in, string phone_in)
+    : name{name_in}, pin{pin_in}, balance{balance_in}, phone_num{phone_in} {}
 
 void showMenu() {
   cout << "**** Chase ATM ****\n";
