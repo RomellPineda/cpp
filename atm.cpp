@@ -2,6 +2,31 @@
 
 using namespace std;
 
+class BankAccount {
+private:
+  // long int account_num;
+  string name;
+  int pin;
+  double balance;
+  string phone_num;
+
+public:
+  // Constructors
+  BankAccount(string name_in, int pin_in);
+  BankAccount(string name_in, int pin_in, string phone_in);
+  // Destructor
+  ~BankAccount() { cout << "destructor called for " << name << endl; }
+};
+
+BankAccount::BankAccount()
+    : BankAccount {"None", 0, 0} {}
+
+BankAccount::BankAccount(string name_in, int pin_in)
+    : BankAccount {name_in, pin_in, 0} {}
+
+BankAccount::BankAccount(string name_in, int pin_in, string phone_in)
+    : name{name_in}, pin{pin_in}, phone_num{phone_in} {}
+
 void showMenu() {
   cout << "**** Chase ATM ****\n";
   cout << "Select Options:\n";
