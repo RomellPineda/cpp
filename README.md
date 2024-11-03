@@ -17,4 +17,4 @@ Initial run will create BankAccount object with default values. Select 5 from th
 
 ## Exiting
 
-Enter 6 and press enter to exit application.
+Enter 6 to exit application.
