@@ -9,12 +9,14 @@ Bank Application implemented in C++. Features include:
 
 ## Running
 
-Runnable from most C++ compilers such as [programiz.com](https://www.programiz.com/cpp-programming/online-compiler/)
+Release version runnable from most C++ compilers such as [programiz.com](https://www.programiz.com/cpp-programming/online-compiler/)
 
 Mac Terminal Commands
 ```
 // Navigate to project folder
+// Compile
 g++ -std=c++11 main.cpp BankAccount.cpp -o atm.out
+// Run
 ./atm.out
 ```
 
