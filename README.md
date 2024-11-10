@@ -22,7 +22,7 @@ g++ -std=c++11 main.cpp BankAccount.cpp -o atm.out
 
 ## Note
 
-Initial run will create BankAccount object with default values. Select 5 from the options menu to obtain account number and utilize default PIN to play with other features or create a new account by selecting option 1.
+Initial run will create BankAccount object with default values. Select 5 from the options menu to obtain account number and utilize default PIN to explore other application features or create a new account by selecting option 1.
 
 ## Exiting
 
