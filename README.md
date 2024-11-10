@@ -9,9 +9,9 @@ Bank Application implemented in C++. Features include:
 
 ## Running
 
-Release version runnable from most C++ compilers such as [programiz.com](https://www.programiz.com/cpp-programming/online-compiler/)
+Release version is runnable as a single file from most C++ compilers such as [programiz.com](https://www.programiz.com/cpp-programming/online-compiler/)
 
-Mac Terminal Commands
+Mac Terminal commands can be used to compile and run locally
 ```
 // Navigate to project folder
 // Compile
