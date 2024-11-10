@@ -1,52 +1,9 @@
-#include <cstdlib>
-#include <ctime>
 #include <iostream>
+#include "BankAccount.h"
 
 using std::cin;
 using std::cout;
 using std::string;
-
-class BankAccount
-{
-private:
-  long int account_num;
-  string name;
-  int pin;
-  double balance;
-  string phone_num;
-
-public:
-  // Class methods
-  void deposit();
-  void withdraw();
-  long int getAccountNum();
-  string getName();
-  int getPin();
-  double getBalance();
-  string getPhoneNum();
-  void setBalance(double new_balance);
-
-  // Constructor
-  BankAccount(string name_in = "none", int pin_in = 1111,
-              double balance_in = 0.0,
-              string phone_in = "no phone number on record");
-
-  // Destructor
-  // ~BankAccount() { cout << "destructor called\n"; }
-};
-
-long int createAccountNum()
-{
-  srand(time(0));
-  return (rand() % 1000000) + 1000000;
-}
-
-BankAccount::BankAccount(string name_in, int pin_in, double balance_in,
-                         string phone_in)
-    : name{name_in}, pin{pin_in}, balance{balance_in}, phone_num{phone_in}
-{
-  account_num = createAccountNum();
-}
 
 BankAccount createAccount()
 {
@@ -64,18 +21,6 @@ BankAccount createAccount()
   cin >> phone_in;
   return BankAccount(name_in, pin_in, funds, phone_in);
 }
-
-long int BankAccount::getAccountNum() { return account_num; }
-
-string BankAccount::getName() { return name; }
-
-int BankAccount::getPin() { return pin; }
-
-double BankAccount::getBalance() { return balance; }
-
-string BankAccount::getPhoneNum() { return phone_num; }
-
-void BankAccount::setBalance(double new_balance) { balance = new_balance; }
 
 bool validateAccount(BankAccount b)
 {
@@ -104,6 +49,7 @@ bool validateAccount(BankAccount b)
   }
   return false;
 }
+
 void displayDetails(BankAccount b)
 {
   cout << "Account Number: " << b.getAccountNum() << '\n';
@@ -147,24 +93,6 @@ void showMenu()
   cout << "5. Show account details\n";
   cout << "6. Exit\n\n";
   cout << "Enter you choice:\n";
-}
-
-void BankAccount::withdraw()
-{
-  double current_balance = BankAccount::getBalance();
-  double withdraw_amount;
-
-  cout << "Enter amount you wish to withdraw\n";
-  cin >> withdraw_amount;
-  if (withdraw_amount <= current_balance)
-  {
-    BankAccount::setBalance(current_balance - withdraw_amount);
-    cout << "Please collect your cash\n";
-  }
-  else
-  {
-    cout << "Unable to complete transaction. Please check Account Balance\n";
-  }
 }
 
 int main()
