@@ -22,6 +22,19 @@ BankAccount createAccount()
   return BankAccount(name_in, pin_in, funds, phone_in);
 }
 
+void displayAdditionalDetails(BankAccount b)
+{
+  cout << "PIN: " << b.getPin() << '\n';
+  cout << "Phone Number: " << b.getPhoneNum() << '\n';
+}
+
+void displayDetails(BankAccount b)
+{
+  cout << "Account Number: " << b.getAccountNum() << '\n';
+  cout << "Name: " << b.getName() << '\n';
+  cout << "Balance: " << b.getBalance() << '\n';
+}
+
 bool validateAccount(BankAccount b)
 {
   long int account_in;
@@ -48,38 +61,6 @@ bool validateAccount(BankAccount b)
     }
   }
   return false;
-}
-
-void displayDetails(BankAccount b)
-{
-  cout << "Account Number: " << b.getAccountNum() << '\n';
-  cout << "Name: " << b.getName() << '\n';
-  cout << "Balance: " << b.getBalance() << '\n';
-}
-
-void displayAdditionalDetails(BankAccount b)
-{
-  cout << "PIN: " << b.getPin() << '\n';
-  cout << "Phone Number: " << b.getPhoneNum() << '\n';
-}
-
-void BankAccount::deposit()
-{
-  double current_balance = BankAccount::getBalance();
-  double deposit_amount;
-
-  cout << "Enter amount you wish to deposit\n";
-  cin >> deposit_amount;
-  if (deposit_amount > 0.0)
-  {
-    BankAccount::setBalance(current_balance += deposit_amount);
-    cout << "Successfully deposited $" << deposit_amount
-         << " to Account Number: " << BankAccount::getAccountNum() << '\n';
-  }
-  else
-  {
-    cout << "Unable to complete transaction\n";
-  }
 }
 
 void showMenu()

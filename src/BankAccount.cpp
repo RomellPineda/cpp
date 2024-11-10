@@ -20,6 +20,25 @@ BankAccount::BankAccount(string name_in, int pin_in, double balance_in,
   account_num = createAccountNum();
 }
 
+void BankAccount::deposit()
+{
+  double current_balance = BankAccount::getBalance();
+  double deposit_amount;
+
+  cout << "Enter amount you wish to deposit\n";
+  cin >> deposit_amount;
+  if (deposit_amount > 0.0)
+  {
+    BankAccount::setBalance(current_balance += deposit_amount);
+    cout << "Successfully deposited $" << deposit_amount
+         << " to Account Number: " << BankAccount::getAccountNum() << '\n';
+  }
+  else
+  {
+    cout << "Unable to complete transaction\n";
+  }
+}
+
 long int BankAccount::getAccountNum() { return account_num; }
 
 string BankAccount::getName() { return name; }
